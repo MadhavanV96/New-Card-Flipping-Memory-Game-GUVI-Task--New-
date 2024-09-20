@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { "Name": "4C", "Source": "assets/4C.png" }, { "Name": "5C", "Source": "assets/5C.png" }
     ];
     
-    const Shuffled = ShuffleCards(AllCards).slice(0, 10);
+    const Shuffled = ShuffleCards(AllCards).slice(0, 9);
     let GameDeck = Shuffled.flatMap(value => [value, value]);
     GameDeck = ShuffleCards(GameDeck);
 
