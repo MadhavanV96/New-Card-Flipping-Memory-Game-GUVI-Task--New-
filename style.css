@@ -36,6 +36,15 @@
   position: relative;
 }
 
+.SingleCard:hover{
+  
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+}
+
+
+
 .MainCard, .BackSide {
   width: 100%;
   height: 100%;
