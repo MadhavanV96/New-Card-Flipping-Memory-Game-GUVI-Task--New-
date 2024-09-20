@@ -1,118 +1,84 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    flex-direction: column;
-    background: linear-gradient(to right, #283048, #859398);
+*{
+  font-family: poppins;
+  background-color:#ffef60;
 }
 
+
+/* Game container */
 .game-container {
-    
-    width: 600px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
+/* Timer styling */
+#timer {
+  font-size: 24px;
+  margin: 10px;
+}
+
+/* Game board grid */
 .game-board {
-    display: grid;
-    grid-template-columns: repeat(6, 120px);
-    grid-gap: 10px;
+  display: grid;
+  justify-content: center;
+  margin-top: 20px;
+  grid-template-columns: repeat(5,120px);
+  margin: auto;
+  background-color: #ffa781;
+ 
 }
 
+/* Card dimensions and perspective for 3D flip */
 .SingleCard {
-    width: 120px;
-    height: 180px;
-    position: relative;
+  width: 100px;
+  height: 150px;
+  margin: 10px;
+  perspective: 1000px;
+  position: relative;
 }
 
-.SingleCard img {
-    
-    height: 100%;
-    position: absolute;
-    cursor: pointer;
+.MainCard, .BackSide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: transform 0.6s;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  left:0px;
 }
 
-.SingleCard:hover{
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+/* Back of the card, initially visible */
+.BackSide {
+  transform: rotateY(0deg);
 }
 
-.flipped img.MainCard {
-    display: block;
+/* Front of the card, initially hidden */
+.MainCard {
+  transform: rotateY(180deg);
 }
 
-.flipped img.BackSide {
-    display: none;
+.flipped .MainCard {
+  transform: rotateY(0deg);
 }
 
-.reset {
-    margin-top:2em;
-    padding: 0.6em 2em;
-    border: none;
-    outline: none;
-    color: rgb(255, 255, 255);
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-  
-  .reset:before {
-    content: "Reset";
-    background: linear-gradient(
-      45deg,
-      #ff0000,
-      #ff7300,
-      #fffb00,
-      #48ff00,
-      #00ffd5,
-      #002bff,
-      #7a00ff,
-      #ff00c8,
-      #ff0000
-    );
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing-button-85 20s linear infinite;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
-  }
-  
-  @keyframes glowing-button-85 {
-    0% {
-      background-position: 0 0;
-    }
-    50% {
-      background-position: 400% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
-  }
-  
-  .reset:after {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #222;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-  }
+.flipped .BackSide {
+  transform: rotateY(180deg);
+}
+
+/* Button and select styling */
+.formText, .start-btn {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.start-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.start-btn:hover {
+  background-color: #2ecc71;
+}

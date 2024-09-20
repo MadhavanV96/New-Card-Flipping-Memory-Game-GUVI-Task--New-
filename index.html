@@ -8,13 +8,17 @@
     <script src="script.js"></script>
 </head>
 <body>
-
     <div class="game-container">
+        <h2>Select Difficulty</h2>
+        <select id="difficulty" class="formText">
+            <option value="Easy">Easy (5 Pairs)</option>
+            <option value="Moderate">Moderate (10 Pairs)</option>
+            <option value="Hard">Hard (20 Pairs)</option>
+        </select>
+        <button id="startGame" class="start-btn">Start Game</button>
+        <h3 id="timer">Time: 00:00</h3>
         <div id="game" class="game-board"></div>
     </div>
-    <button class="reset" onclick="window.location.reload()">Reset</button>
-
     
-
 </body>
 </html>
