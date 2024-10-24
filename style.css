@@ -18,10 +18,10 @@
 
 /* Game board grid */
 .game-board {
-  display: grid;
+  display: flex;
   justify-content: center;
   margin-top: 20px;
-  grid-template-columns: repeat(5,120px);
+  flex-wrap: wrap;
   margin: auto;
   background-color: #ffa781;
  
